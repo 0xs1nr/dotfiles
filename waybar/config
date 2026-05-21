@@ -1,85 +1,37 @@
 {
-  "layer": "bot",
-  "spacing": 0,
-  "height": 0,
-  "margin-bottom": 0,
-  "margin-top": 15,
-  "position": "top",
-  "margin-right": 500,
-  "margin-left": 500,
-  "modules-left": [
-    "hyprland/workspaces",
-    "sway/workspaces"
-  ],
-  "modules-center": [
-    "custom/applauncher"
-  ],
-  "modules-right": [
-    "network",
-    "battery",
-    "pulseaudio",
-    "tray",
-    "clock"
-  ],
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
-  },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
-  },
-  "custom/applauncher": {
-    "format": "〇",
-    "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
-    "tooltip": false
-  },
-  "tray": {
-    "spacing": 10,
-    "tooltip": false
-  },
-  "clock": {
-    "format": "󰅐 {:%H:%M}",
-    "tooltip": false
-  },
-  "network": {
-    "format-wifi": " {bandwidthDownBits}",
-    "format-ethernet": " {bandwidthDownBits}",
-    "format-disconnected": "󰤮 No Network",
-    "interval": 5,
-    "tooltip": false
-  },
-  "pulseaudio": {
-    "scroll-step": 5,
-    "max-volume": 150,
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    "format-icons": [
-      "",
-      "",
-      " "
-    ],
-    "nospacing": 1,
-    "format-muted": " ",
-    "on-click": "pavucontrol",
-    "tooltip": false
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰂄{capacity}%",
-    "format-alt": "{icon} {time}",
-    "format-full": "󱈑 {capacity}%",
-    "format-icons": [
-      "󱊡",
-      "󱊢",
-      "󱊣"
-    ]
-  }
+	"layer": "top",
+	"modules-left": ["sway/workspaces", "mpd", "sway/mode"],
+	"modules-center": [],
+	"modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "clock"],
+	"mpd": {
+		"tooltip": false,
+		"format": "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+		"format-disconnected": "ﳌ",
+		"format-stopped": "",
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        }
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+			"default": ["奄", "奔", "墳"]
+		}
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": " {essid} {ipaddr}",
+		"format-ethernet": " {ipaddr}"
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": " {}%"
+	}
 }
