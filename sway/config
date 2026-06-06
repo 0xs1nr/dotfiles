@@ -25,7 +25,7 @@ set $file_explorer nautilus
 
 # Setting the wallpaper
 # sudo pacman -S swaybg
-output * bg /home/s1nr/Imagens/wallpapers/wallpaper.jpg fill
+output * bg /home/s1nr/Imagens/walls/radium/a_mountain_range_at_night.png fill
 
 # Configuring the monitor --> MIGHT BE NECESSARY TO CHANGE
 output eDP-1 resolution 1920x1080@60.020Hz position 1920,0
@@ -39,8 +39,8 @@ output eDP-1 resolution 1920x1080@60.020Hz position 1920,0
 # sudo pacman -S swaylock
 # exec swayidle -w \
 #          timeout 300 'swaylock -f -c 000000' \
-#         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#         before-sleep 'swaylock -f -c 000000'
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
